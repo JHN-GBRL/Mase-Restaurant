@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mase's Restaurant Menu </title>
+    <link rel = "stylesheet" href = "style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.3/css/dataTables.bootstrap5.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+   
+    <script defer src="https://code.jquery.com/jquery-3.7.1.js"> </script>
+    <script defer src="https://cdn.datatables.net/2.0.3/js/dataTables.js"> </script>
+    <script defer src="https://cdn.datatables.net/2.0.3/js/dataTables.bootstrap5.js"> </script>
+    <script defer src="javascript.js"></script>
+
+    <link rel="icon" type="image/png" href="https://scontent.xx.fbcdn.net/v/t1.15752-9/431818088_1141967073672611_5894890636918922496_n.jpg?stp=dst-jpg_p206x206&_nc_cat=108&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeG-91v13YCr6bGiPAVZjFGtzoEMZpRVOiDOgQxmlFU6IDwogp9z0vC6xCjjsj-kOV4JVCZ2kJK6wgWZV8JKBeP9&_nc_ohc=13EnRx-_WhoAb6_Q5Js&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AdWF0ADzpi_Th-qvpVmkRIRvXh39Wb6hhl9V21bdFa35kw&oe=6636CF8A">
+
+
+   <style>
+        .bold-text{
+        font-weight: normal;
+        }
+        @media (max-width: 767.58px) {
+            h1{
+                font-size: 3rem;
+            }
+        }
+        @media (max-width: 568.98px) {
+            h1{
+                font-size: 3rem;
+            }
+        }
+        body{
+            font-family: Arial, sans-serif;
+            padding: 2rem;
+        }
+        h1{
+            text-align: center;
+            font-weight: bold;
+            font-size: 5rem;
+        }
+        table{
+            width: 150%;
+            border-collapse: collapse;
+        }
+        th, td , tfoot, tbody{
+            padding: 3rem;
+            border: 5px solid rgb(228, 166, 96);
+            text-align: center;
+            font-weight: bold;
+        }
+        tr{
+            tr:nth-child(even){
+                background-color: #f2f2f2;
+            }
+        }
+  
+    </style>
+</head>
+<body>
+
+ <div class="container pt-5 text-center">
+      <h1 class="header">Mase Restaurant </h1>
+    
+        <div class="table-responsive">
+    
+            <table id="example" class="table table-striped" style="width:100%">
+                <thead> 
+                    <tr>
+                        <th> <b> <mark class="head"> INVOICE</mark>  </b> </th>
+                        <th> <b><mark class="head"> CUSTOMER  </mark></Customer></th>
+                        <th><b><mark class="head"> ORDER </mark></th>
+                        <th><b> <mark class="head"> QUANTITY </mark> </th>
+                        <th><b><mark class="head"> PRICE </mark></th>
+                        <th><b> <mark class="head">TOTAL PRICE </mark></th>
+                        <th><b> <mark class="head">STATUS </mark></th>
+                    </tr>
+               
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td> 1001</td>
+                        <td> Datu</td>
+                        <td> Knuckles Fries</td>
+                        <td> 9 </td>
+                        <td> $3</td>
+                        <td> $27</td>
+                        <td> <mark class="claimed" > Claimed </mark></td>
+                        
+                    </tr>
+
+                    <tr>
+                        <td>1002</td>
+                        <td> Allahdin </td>
+                        <td> Bobbers Milk Tea</td>
+                        <td>6</td>
+                        <td>$3</td>
+                        <td>$18</td>
+                        <td> <mark class="claimed" >Claimed </mark></td>
+                    </tr>
+
+                    <tr>
+                        <td>1003</td>
+                        <td> Kiram</td>
+                        <td> Trunk Twister Curls</td>
+                        <td>10</td>
+                        <td>$3</td>
+                        <td>$30</td>
+                        <td> <mark class="processing"> Processing</mark> </td>
+                    </tr>
+
+                    <tr>
+                        <td>1004</td>
+                        <td>chok</td>
+                        <td>Up Down Burger</td>
+                        <td>24</td>
+                        <td>$4</td>
+                        <td>$96</td>
+                        <td> <mark class="cancelled"> Cancelled</mark> </td>
+
+                    </tr>
+
+                    <tr>
+                        <td>1005</td>
+                        <td>Errol</td>
+                        <td>Trunk Twister Curls</td>
+                        <td>15</td>
+                        <td>$3</td>
+                        <td>$45</td>
+                        <td> <mark class="claimed" >Claimed </mark></td>
+                    </tr>
+
+                    <tr>
+                        <td>1006</td>
+                        <td>Sting</td>
+                        <td>Up Down Burger</td>
+                        <td>36</td>
+                        <td>$4</td>
+                        <td>$144</td>
+                        <td> <mark class="claimed" >Claimed </mark></td>
+                    </tr>
+
+                    <tr>
+                        <td>1007</td>
+                        <td>Shaira</td> 
+                        <td>Trunk Twister Curls</td>
+                        <td>15</td>
+                        <td>$3</td>
+                        <td>$45</td>
+                        <td> <mark class="claimed" >Claimed </mark></td>
+                    </tr>
+
+                    <tr>
+                        <td>1008</td>
+                        <td>Ronwell</td>
+                        <td>On Your Chicken Feet</td>
+                        <td>15</td>
+                        <td>$5</td>
+                        <td>$75</td>
+                        <td> <mark class="processing">Processing</mark> </td>
+                    </tr>
+
+                    
+                    <tr>
+                        <td>1009</td>
+                        <td>Jun</td>
+                        <td>MilProf Shake</td>
+                        <td>25</td>
+                        <td>$3</td>
+                        <td>$75</td>
+                        <td> <mark class="claimed" >Claimed</mark></td>
+                    </tr>
+
+                    <tr>
+                        <td>1010</td>
+                        <td>Ivan</td>
+                        <td>Fatigue Roll</td>
+                        <td>15</td>
+                        <td>$4</td>
+                        <td>$60</td>
+                        <td> <mark class="claimed" >Claimed </mark></td>
+                    </tr>
+
+
+                    
+                    <tr>
+                        <td>1011</td>
+                        <td>Chester</td>
+                        <td>Pilarphat Cake</td>
+                        <td>4</td>
+                        <td>$15</td>
+                        <td>$60</td>
+                        <td> <mark class="cancelled"> Cancelled</mark> </td>
+                    </tr>
+
+
+                    
+                    <tr>
+                        <td>1012</td>
+                        <td>Ronald</td>
+                        <td>MilProf Shake</td>
+                        <td>18</td>
+                        <td>$3</td>
+                        <td>$54</td>
+                        <td> <mark class="claimed" >Claimed </mark></td>
+                    </tr>
+
+
+                    
+                    <tr>
+                        <td>1013</td>
+                        <td>Mikee</td>
+                        <td>Pilarphat Cake</td>
+                        <td>6</td>
+                        <td>$15</td>
+                        <td>$90</td>
+                        <td> <mark class="claimed"> Claimed</mark> </td>
+                    </tr>
+
+
+                    
+                    <tr>
+                        <td>1014</td>
+                        <td>Totie</td>
+                        <td>SOP Sundae</td>
+                        <td>9</td>
+                        <td>$2</td>
+                        <td>$18</td>
+                        <td> <mark class="claimed" >Claimed </mark></td>
+                    </tr>
+
+
+                    
+                    <tr>
+                        <td>1015</td>
+                        <td>Jigs</td>
+                        <td>SOP Sundae</td>
+                        <td>8</td>
+                        <td>$2</td>
+                        <td>$16</td>
+                        <td> <mark class="claimed" >Claimed </mark></td>
+                    </tr>
+
+
+                    
+                    <tr>
+                        <td>1016</td>
+                        <td>Emong</td>
+                        <td>SOP Sundae</td>
+                        <td>20</td>
+                        <td>$2</td>
+                        <td>$40</td>
+                        <td> <mark class="claimed" >Claimed</mark></td>
+                    </tr>
+
+
+                    
+                    <tr>
+                        <td>1017</td>
+                        <td>Maja</td>
+                        <td>Marcher Tenders</td>
+                        <td>17</td>
+                        <td>$3</td>
+                        <td>$51</td>
+                        <td> <mark class="claimed" >Claimed </mark></td>
+                    </tr>
+
+
+                    
+                    <tr>
+                        <td>1018</td>
+                        <td>Alwyn</td>
+                        <td>Marcher Tenders</td>
+                        <td>15</td>
+                        <td>$3</td>
+                        <td>$15</td>
+                        <td> <mark class="claimed" >Claimed </mark></td>
+                    </tr>
+
+
+                    
+                    <tr>
+                        <td>1019</td>
+                        <td>Zeckrias</td>
+                        <td>Pilarphat Cake</td>
+                        <td>1</td>
+                        <td>$15</td>
+                        <td>$15</td>
+                        <td> <mark class="cancelled"> Cancelled</mark> </td>
+                    </tr>
+
+
+                    
+                    <tr>
+                        <td>1020</td>
+                        <td>Edrian</td>
+                        <td>Pilarphat Cake</td>
+                        <td>10</td>
+                        <td>$15</td>
+                        <td>$150</td>
+                        <td> <mark class="claimed" >Claimed </mark></td>
+                    </tr>
+
+
+                    <tr>
+                        <td> 1021</td>
+                        <td> Shrek</td>
+                        <td> Knuckles Fries</td>
+                        <td> 12</td>
+                        <td> $3</td>
+                        <td>  $36</td>
+                        <td> <mark class="claimed" > Claimed </mark></td>
+                        
+                    </tr>
+
+                    <tr>
+                        <td>1022</td>
+                        <td> Joseph</td>
+                        <td> Bobbers Milk Tea</td>
+                        <td>6</td>
+                        <td>$3</td>
+                        <td>$18</td>
+                        <td> <mark class="claimed" >Claimed </mark></td>
+                    </tr>
+
+                    <tr>
+                        <td>1023</td>
+                        <td>Lester</td>
+                        <td> Trunk Twister Curls</td>
+                        <td>9</td>
+                        <td>$3</td>
+                        <td>$27</td>
+                        <td> <mark class="processing"> Processing</mark> </td>
+                    </tr>
+
+                    <tr>
+                        <td>1024</td>
+                        <td>Brawner</td>
+                        <td>Pilarphat Cake</td>
+                        <td>20</td>
+                        <td>$15</td>
+                        <td>$300</td>
+                        <td> <mark class="cancelled"> Cancelled</mark> </td>
+
+                    </tr>
+
+                    <tr>
+                        <td>1025</td>
+                        <td>Artemio</td>
+                        <td>Trunk Twister Curls</td>
+                        <td>12</td>
+                        <td>$3</td>
+                        <td>$36</td>
+                        <td> <mark class="claimed" >Claimed </mark></td>
+                    </tr>
+
+                    <tr>
+                        <td>1026</td>
+                        <td>Alosada</td>
+                        <td>Pilarphat Cake</td>
+                        <td>5</td>
+                        <td>$15</td>
+                        <td>$75</td>
+                        <td> <mark class="claimed" >Claimed </mark></td>
+                    </tr>
+
+                    <tr>
+                        <td>1027</td>
+                        <td>Kerax</td> 
+                        <td>Marcher Tenders</td>
+                        <td>12</td>
+                        <td>$3</td>
+                        <td>$36</td>
+                        <td> <mark class="claimed" >Claimed </mark></td>
+                    </tr>
+
+                    <tr>
+                        <td>1028</td>
+                        <td>Edrick</td>
+                        <td>Marcher Tenders</td>
+                        <td>15</td>
+                        <td>$3</td>
+                        <td>$15</td>
+                        <td> <mark class="processing">Processing</mark> </td>
+                    </tr>
+
+                    
+                    <tr>
+                        <td>1029</td>
+                        <td>Gabo</td>
+                        <td>MilProf Shake</td>
+                        <td>24</td>
+                        <td>$3</td>
+                        <td>$72</td>
+                        <td> <mark class="claimed" >Claimed</mark></td>
+                    </tr>
+
+                    <tr>
+                        <td>1030</td>
+                        <td>Angelica</td>
+                        <td>Pilarphat Cake</td>
+                        <td>15</td>
+                        <td>$15</td>
+                        <td>$225</td>
+                        <td> <mark class="claimed" >Claimed </mark></td>
+                    </tr>
+
+
+                    
+                    <tr>
+                        <td>1031</td>
+                        <td>Fortunato</td>
+                        <td>MilProf Shake</td>
+                        <td>20</td>
+                        <td>$3</td>
+                        <td>$60</td>
+                        <td> <mark class="cancelled"> Cancelled</mark> </td>
+                    </tr>
+
+
+                    
+                    <tr>
+                        <td>1032</td>
+                        <td>Janda</td>
+                        <td>MilProf Shake</td>
+                        <td>18</td>
+                        <td>$3</td>
+                        <td>$54</td>
+                        <td> <mark class="claimed" >Claimed </mark></td>
+                    </tr>
+
+
+                    
+                    <tr>
+                        <td>1033</td>
+                        <td>Noel</td>
+                        <td>MilProf Shake</td>
+                        <td>6</td>
+                        <td>$3</td>
+                        <td>$18</td>
+                        <td> <mark class="claimed"> Claimed</mark> </td>
+                    </tr>
+
+
+                    
+                    <tr>
+                        <td>1034</td>
+                        <td>De leon</td>
+                        <td>Marcher Tenders</td>
+                        <td>9</td>
+                        <td>$3</td>
+                        <td>$27</td>
+                        <td> <mark class="claimed" >Claimed </mark></td>
+                    </tr>
+
+
+                    
+                    <tr>
+                        <td>1035</td>
+                        <td>Manuel</td>
+                        <td>Pilarphat Cake</td>
+                        <td>8</td>
+                        <td>$15</td>
+                        <td>$120</td>
+                        <td> <mark class="claimed" >Claimed </mark></td>
+                    </tr>
+
+
+                    
+                    <tr>
+                        <td>1036</td>
+                        <td>Landers</td>
+                        <td>Pilarphat Cake</td>
+                        <td>20</td>
+                        <td>$15</td>
+                        <td>$300</td>
+                        <td> <mark class="claimed" >Claimed</mark></td>
+                    </tr>
+
+
+                    
+                    <tr>
+                        <td>1037</td>
+                        <td>Maro</td>
+                        <td>Marcher Tenders</td>
+                        <td>17</td>
+                        <td>$3</td>
+                        <td>$51</td>
+                        <td> <mark class="claimed" >Claimed </mark></td>
+                    </tr>
+
+
+                    
+                    <tr>
+                        <td>1038</td>
+                        <td>Maria</td>
+                        <td>MilProf Shake</td>
+                        <td>15</td>
+                        <td>$3</td>
+                        <td>$15</td>
+                        <td> <mark class="claimed" >Claimed </mark></td>
+                    </tr>
+
+
+                    
+                    <tr>
+                        <td>1039</td>
+                        <td>Kiel</td>
+                        <td>Marcher Tenders</td>
+                        <td>30</td>
+                        <td>$3</td>
+                        <td>$90</td>
+                        <td> <mark class="cancelled"> Cancelled</mark> </td>
+                    </tr>
+    
+
+                    
+                    <tr>
+                        <td>1040</td>
+                        <td>Leoric</td>
+                        <td>Pilarphat Cake</td>
+                        <td>100</td>
+                        <td>$15</td>
+                        <td>$1500</td>
+                        <td> <mark class="claimed" >Claimed </mark></td>
+                    </tr>
+
+
+                </tbody>
+
+                <tfoot>
+                    <tr>
+                        <th> <b class="head">INVOICE </b> </th>
+                        <th> <b class="head"> CUSTOMER  </b></th>
+                        <th> <b class="head"> ORDER </b> </th>
+                        <th> <b class="head"> QUANTITY </b></th>
+                        <th> <b class="head"> PRICE </b></th>
+                        <th> <b class="head"> TOTAL PRICE </b></mark></th>
+                        <th> <b class="head"> STATUS </b></th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+ </div>
+</body>
+</html>

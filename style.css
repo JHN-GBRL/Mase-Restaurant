@@ -1,0 +1,27 @@
+body {
+    background: url(https://img.freepik.com/free-vector/hand-drawn-food-doodles-background_23-2149130950.jpg) no-repeat;
+    background-size: cover;
+}
+.bold-text{
+    font-weight: bold;
+}
+.processing {
+    background-color: orange; 
+    color: rgb(0, 0, 0);
+}
+.claimed {
+    background-color: green; 
+    color: rgb(0, 0, 0)
+}
+.cancelled{
+    background-color: red; 
+    color: rgb(0, 0, 0);
+}
+.head{
+    text-align: center;
+    color: rgb(15, 117, 66) ;
+}
+.header{
+    text-align: center; 
+    color: rgb(15, 117, 66);
+}
